@@ -1,12 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { tareas } from './data/tareas.json';
+
+import Navbar from './components/navbar';
+
 function App() {
   return (
     <div className="App">
-      <h1>Pandello</h1>
+      <Navbar titulo="Pandello"/>
     </div>
   );
 }
+
 
 export default App;
