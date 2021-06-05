@@ -8,7 +8,7 @@ import ContextAPI from './ContextAPI';
 import uuid from "react-uuid";
 import { useLocalStorage } from './data/localStorage';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-
+import Swal from 'sweetalert2';
 
 
 
@@ -72,8 +72,24 @@ function App() {
     })
   }
 
-  const onDragEnd = () => {
+  const onDragEnd = (result) => {
 
+    const {
+      destination,
+      source, source: { droppableId: sourceDroppableId, index: sourceIndex },
+      draggabledId,
+      type
+    } = result;
+
+
+
+    if (!destination) {
+      return Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'La tarea no se puede mover',
+      });
+    }
   }
 
 
@@ -90,9 +106,9 @@ function App() {
                 <div className="container-fluid mt-2" ref={provided.innerRef} {...provided.droppableProps}>
                   <div className="container-columnas d-flex justify-content-beetween">
                     {
-                      data.listaIds.map(listaID => {
+                      data.listaIds.map((listaID, index) => {
                         const lista = data.listas[listaID]
-                        return <List lista={lista} key={listaID}></List>
+                        return <List lista={lista} key={listaID} index={index}></List>
                       })
                     }
                     <Agregador type="list" ></Agregador>
