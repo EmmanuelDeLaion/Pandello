@@ -44,6 +44,6 @@ const datosListas = {
             ],
         },
     },
-    idListas: ["lista1", "lista2", "lista3"]
+    listaIds: ["lista1", "lista2", "lista3"]
 }
 export default datosListas;

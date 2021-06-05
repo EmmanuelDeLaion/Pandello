@@ -6,6 +6,7 @@ import Agregador from './Agregador';
 
 const List = ({ lista }) => {
 
+   
  
     return (
         <div>
@@ -14,7 +15,7 @@ const List = ({ lista }) => {
 
                 {/* Titulo de la culumna  */}
                 <div className="card-header">
-                    <TituloLista titulo={lista.titulo} idLista={lista.id}></TituloLista>
+                    <TituloLista titulo={lista.titulo} listaId={lista.id}></TituloLista>
                 </div>
 
                 {/* cuerpo de la card  */}

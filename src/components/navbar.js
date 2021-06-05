@@ -7,7 +7,7 @@ class Navbar extends Component {
 
                 <nav className="navbar navbar-light bg-light">
                     <div className="container-fluid">
-                        <a className="navbar-brand fw-bold" href="#">
+                        <a className="navbar-brand fw-bold">
                             {this.props.titulo}
                         </a>
                     </div>

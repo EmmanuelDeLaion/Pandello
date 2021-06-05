@@ -1,29 +1,24 @@
 import './App.css';
 import React, { useState } from 'react';
-import datosListas from './data/tareas';
-
+import datosListas from './data/tareas.js';
 import Navbar from './components/Navbar';
 import List from './components/Lista';
-import AgregadorText from './components/AgregadorText';
 import Agregador from './components/Agregador';
-
-import ContextApi from './ContextApi';
+import ContextAPI from './ContextAPI';
 
 
 function App() {
-
   const [data, setData] = useState(datosListas);
   console.log(data);
-
-
-  const actualizarTituloLista = (titulo, idListas) => {
-    const lista = data.listas[idListas]
- 
+  const actualizarTituloLista = (tituloActualizado, listaId) => {
+    const lista = data.listas[listaId];
+    console.log(lista);
+    lista.titulo = tituloActualizado;
     setData({
       ...data,
-      idListas: {
+      listas: {
         ...data.listas,
-        [idListas]: lista
+        [listaId]: lista
       }
     });
   }
@@ -31,25 +26,24 @@ function App() {
 
   return (
 
-    <ContextApi.Provider value={{ actualizarTituloLista }}>
+    <ContextAPI.Provider value={{ actualizarTituloLista }}>
 
       <div className="App">
         <Navbar titulo="Pandello" />
         <div className="container-fluid mt-2">
           <div className="d-flex justify-content-beetween">
             {
-              data.idListas.map(idLista => {
-                const lista = data.listas[idLista]
-                return <List lista={lista} key={idLista}></List>
+              data.listaIds.map(listaID => {
+                const lista = data.listas[listaID]
+                return <List lista={lista} key={listaID}></List>
               })
             }
             <Agregador type="list" ></Agregador>
           </div>
-
         </div>
       </div>
 
-    </ContextApi.Provider>
+    </ContextAPI.Provider>
 
 
   );
