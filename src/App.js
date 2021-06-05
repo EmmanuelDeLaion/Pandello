@@ -5,11 +5,17 @@ import Navbar from './components/Navbar';
 import List from './components/Lista';
 import Agregador from './components/Agregador';
 import ContextAPI from './ContextAPI';
+import uuid from "react-uuid";
+import { useLocalStorage } from './data/localStorage';
 
 
 function App() {
-  const [data, setData] = useState(datosListas);
+  const [data, setData] = useLocalStorage('datos', datosListas);
   console.log(data);
+
+
+
+  // recibe el nuevo titulo escrito y el id cuando se ejecuta el onblur en el input de la culumna
   const actualizarTituloLista = (tituloActualizado, listaId) => {
     const lista = data.listas[listaId];
     console.log(lista);
@@ -24,9 +30,37 @@ function App() {
   }
 
 
+
+  const agregarCard = (titulo, listaId) => {
+    const nuevaCardId = uuid();
+    const nuevaCard = {
+      id: nuevaCardId,
+      titulo
+    }
+    const lista = data.listas[listaId];
+    lista.cards = [
+      ...lista.cards,
+      nuevaCard
+    ]
+    setData({
+      ...data,
+      listas: {
+        ...data.listas,
+        [listaId]: lista
+      }
+    })
+  }
+
+
+
+  const agregarColumna = (titulo) => {
+
+  }
+
+
   return (
 
-    <ContextAPI.Provider value={{ actualizarTituloLista }}>
+    <ContextAPI.Provider value={{ actualizarTituloLista, agregarCard, agregarColumna }}>
 
       <div className="App">
         <Navbar titulo="Pandello" />
