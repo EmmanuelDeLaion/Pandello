@@ -4,4 +4,18 @@
 
 .size-card{
     max-width: 300px;
+    min-height: 500px;
+}
+.boton{
+    border-radius: 50px;
+    font-size: 12px;
+}
+ 
+.card-tarea{
+    border-radius: 10px;
+    background-color: #fff;
+    margin-top: 5px;
+    padding: 5px;
+    box-shadow: -1px 7px 10px -1px rgba(0,0,0,0.28);
+
 }
