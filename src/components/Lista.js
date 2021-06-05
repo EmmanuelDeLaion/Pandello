@@ -4,7 +4,10 @@ import Card from './Card';
 import Agregador from './Agregador';
 
 
-const List = () => {
+const List = ({ lista }) => {
+
+    console.log(lista);
+
     return (
         <div>
 
@@ -12,14 +15,19 @@ const List = () => {
 
                 {/* Titulo de la culumna  */}
                 <div className="card-header">
-                    <TituloLista></TituloLista>
+                    <TituloLista titulo={lista.titulo} idLista={lista.id}></TituloLista>
                 </div>
 
                 {/* cuerpo de la card  */}
                 <div className="card-body-background card-body">
-                    <Card></Card>
-                    <Card></Card>
-                    <Card></Card>
+
+                    {
+                        lista.cards.map(card => {
+                            return <Card card={card} key={card.id} ></Card>
+                        })
+                    }
+
+
                 </div>
 
                 {/* boton para agregar cards  */}

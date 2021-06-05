@@ -5,9 +5,9 @@ class Navbar extends Component {
         return (
             <div>
 
-                <nav class="navbar navbar-light bg-light">
-                    <div class="container-fluid">
-                        <a class="navbar-brand fw-bold" href="#">
+                <nav className="navbar navbar-light bg-light">
+                    <div className="container-fluid">
+                        <a className="navbar-brand fw-bold" href="#">
                             {this.props.titulo}
                         </a>
                     </div>

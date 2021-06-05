@@ -8,17 +8,16 @@ const Agregador = ({ type }) => {
 
     return (
         <div>
-
             <div className={!abrir ? "d-flex justify-content-center" : "hidden"} >
-                <button onClick={() => setAbrir(true)} className="btn btn-primary boton"><i class="fas fa-plus"></i>
+                <button onClick={() => setAbrir(true)} className="btn btn-primary boton"><i className="fas fa-plus"></i>
                     {
                         type === "card" ? "Agregar nuevo elemento" : "Agregar nueva columna"
                     }
                 </button>
             </div>
 
-            <div className={abrir ? "mt-2" : "hidden"} >
-                <AgregadorText type={type} setAbrir={setAbrir}></AgregadorText>
+            <div className={abrir ? "mt-2" : "hidden"}  >
+                <AgregadorText type={type} setAbrir={setAbrir} ></AgregadorText>
             </div>
 
 

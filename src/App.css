@@ -39,13 +39,24 @@
     background-color: #fff;
     margin-top: 5px;
     padding: 5px;
+    font-size: 12px;
     box-shadow: -1px 7px 10px -1px rgba(0, 0, 0, 0.28);
 }
 
-textarea::placeholder{
+.textarea {
     font-size: 12px;
 }
 
-.hidden{
+textarea::placeholder {
+    font-size: 12px;
+}
+
+.titulo-input {
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hidden {
     display: none;
 }
