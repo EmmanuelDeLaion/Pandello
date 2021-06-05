@@ -1,14 +1,14 @@
 import React, { useState, useContext } from 'react'
-import ContextApi from '../ContextApi';
+import contextAPI from '../ContextAPI';
 
-const TituloLista = ({ titulo, idListas }) => {
+const TituloLista = ({ titulo, listaId }) => {
 
-    const [tituloLista, setTituloLista] = useState(titulo);
-    const { actualizarTituloLista } = useContext(ContextApi);
+    const [tituloNuevo, setTituloNuevo] = useState(titulo);
+    const { actualizarTituloLista } = useContext(contextAPI);
 
 
     const handleBlur = () => {
-        actualizarTituloLista(tituloLista, idListas);
+         actualizarTituloLista(tituloNuevo, listaId);
     }
 
 
@@ -19,10 +19,9 @@ const TituloLista = ({ titulo, idListas }) => {
                 <div className="form-group">
                     <input
                         onBlur={handleBlur}
-                        type="text"
                         className="form-control titulo-input"
-                        value={tituloLista}
-                        onChange={e => setTituloLista(e.target.value)} >
+                        value={tituloNuevo}
+                        onChange={e => setTituloNuevo(e.target.value)} >
                     </input>
                 </div>
             </form>

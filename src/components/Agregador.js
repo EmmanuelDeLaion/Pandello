@@ -2,9 +2,8 @@ import React, { useState } from 'react'
 import AgregadorText from './AgregadorText';
  
 const Agregador = ({ type }) => {
-
-
     const [abrir, setAbrir] = useState(false);
+
 
     return (
         <div>
@@ -19,7 +18,6 @@ const Agregador = ({ type }) => {
             <div className={abrir ? "mt-2" : "hidden"}  >
                 <AgregadorText type={type} setAbrir={setAbrir} ></AgregadorText>
             </div>
-
 
         </div>
     )
