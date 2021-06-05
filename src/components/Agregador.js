@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AgregadorText from './AgregadorText';
-
+ 
 const Agregador = ({ type }) => {
 
 

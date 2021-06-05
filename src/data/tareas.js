@@ -28,7 +28,22 @@ const datosListas = {
                 }
             ],
         },
+
+        "lista3": {
+            id: "lista3",
+            titulo: "Segundo dia",
+            cards: [
+                {
+                    id: "card1",
+                    titulo: "Correr"
+                },
+                {
+                    id: "card2",
+                    titulo: "Dormir"
+                }
+            ],
+        },
     },
-    idListas: ["lista1", "lista2"]
+    idListas: ["lista1", "lista2", "lista3"]
 }
 export default datosListas;

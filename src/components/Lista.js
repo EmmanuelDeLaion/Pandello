@@ -6,8 +6,7 @@ import Agregador from './Agregador';
 
 const List = ({ lista }) => {
 
-    console.log(lista);
-
+ 
     return (
         <div>
 
