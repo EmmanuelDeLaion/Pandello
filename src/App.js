@@ -10,8 +10,11 @@ import { useLocalStorage } from './data/localStorage';
 
 
 function App() {
+  // const [data, setData] = useState(datosListas);
   const [data, setData] = useLocalStorage('datos', datosListas);
   console.log(data);
+
+  // localStorage.removeItem('datos');
 
 
 
@@ -54,7 +57,22 @@ function App() {
 
 
   const agregarColumna = (titulo) => {
+    const nuevaColumnaId = uuid();
 
+    setData({
+      listaIds: [
+        ...data.listaIds,
+        nuevaColumnaId
+      ],
+      listas: {
+        ...data.listas,
+        [nuevaColumnaId]: {
+          id: nuevaColumnaId,
+          titulo,
+          cards: []
+        }
+      }
+    })
   }
 
 
