@@ -4,10 +4,8 @@ const Card = () => {
     return (
         <div>
             <div className="card-tarea">
-                <p>Tarea </p>
+                <p>Tarea dfsdfdhsfhs fhs js fsdf j</p>
             </div>
-            
-
         </div>
     )
 }
