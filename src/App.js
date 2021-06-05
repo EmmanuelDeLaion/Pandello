@@ -7,16 +7,15 @@ import Agregador from './components/Agregador';
 import ContextAPI from './ContextAPI';
 import uuid from "react-uuid";
 import { useLocalStorage } from './data/localStorage';
+import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+
+
 
 
 function App() {
-  // const [data, setData] = useState(datosListas);
   const [data, setData] = useLocalStorage('datos', datosListas);
-  console.log(data);
 
   // localStorage.removeItem('datos');
-
-
 
   // recibe el nuevo titulo escrito y el id cuando se ejecuta el onblur en el input de la culumna
   const actualizarTituloLista = (tituloActualizado, listaId) => {
@@ -31,7 +30,6 @@ function App() {
       }
     });
   }
-
 
 
   const agregarCard = (titulo, listaId) => {
@@ -55,7 +53,6 @@ function App() {
   }
 
 
-
   const agregarColumna = (titulo) => {
     const nuevaColumnaId = uuid();
 
@@ -75,24 +72,44 @@ function App() {
     })
   }
 
+  const onDragEnd = () => {
+
+  }
+
 
   return (
 
     <ContextAPI.Provider value={{ actualizarTituloLista, agregarCard, agregarColumna }}>
-
       <div className="App">
         <Navbar titulo="Pandello" />
-        <div className="container-fluid mt-2">
-          <div className="d-flex justify-content-beetween">
+
+        <DragDropContext onDragEnd={onDragEnd}>
+          <Droppable droppableId="1" type="lista" direction="horizontal">
             {
-              data.listaIds.map(listaID => {
-                const lista = data.listas[listaID]
-                return <List lista={lista} key={listaID}></List>
-              })
+              (provided) => (
+                <div className="container-fluid mt-2" ref={provided.innerRef} {...provided.droppableProps}>
+                  <div className="container-columnas d-flex justify-content-beetween">
+                    {
+                      data.listaIds.map(listaID => {
+                        const lista = data.listas[listaID]
+                        return <List lista={lista} key={listaID}></List>
+                      })
+                    }
+                    <Agregador type="list" ></Agregador>
+                    {
+                      provided.placeholder
+                    }
+                  </div>
+                </div>
+              )
             }
-            <Agregador type="list" ></Agregador>
-          </div>
-        </div>
+
+
+
+          </Droppable>
+        </DragDropContext>
+
+
       </div>
 
     </ContextAPI.Provider>

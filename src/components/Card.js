@@ -1,12 +1,21 @@
-import React from 'react'
- 
-const Card = ({ card }) => {
+import React from 'react';
+import { Draggable } from 'react-beautiful-dnd';
+
+
+const Card = ({ card, index }) => {
     return (
-        <div>
-            <div className="card-tarea">
-                {card.titulo}
-            </div>
-        </div>
+        <Draggable draggableId={card.id} index={index}>
+            {
+                (provided) => (
+                    <div ref={provided.innerRef} {...provided.dragHandleProps} {...provided.draggableProps}>
+                        <div className="card-tarea">
+                            {card.titulo}
+                        </div>
+                    </div>
+                )
+            }
+        </Draggable>
+
     )
 }
 

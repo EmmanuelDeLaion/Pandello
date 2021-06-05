@@ -2,44 +2,76 @@ import React from 'react'
 import TituloLista from './TituloLista';
 import Card from './Card';
 import Agregador from './Agregador';
+import { Draggable, Droppable } from 'react-beautiful-dnd';
 
 
-const List = ({ lista }) => {
+const List = ({ lista, index }) => {
 
-   
- 
+
     return (
-        <div>
-
-            <div className="card size-card mb-5 m-2">
-
-                {/* Titulo de la culumna  */}
-                <div className="card-header">
-                    <TituloLista titulo={lista.titulo} listaId={lista.id}></TituloLista>
-                </div>
-
-                {/* cuerpo de la card  */}
-                <div className="card-body-background card-body">
-
-                    {
-                        lista.cards.map(card => {
-                            return <Card card={card} key={card.id} ></Card>
-                        })
-                    }
+        <Draggable draggableId={lista.id} index={index}>
+            {
+                (provided) => (
+                    <div {...provided.draggableProps} ref={provided.innerRef}>
+                        <div className="card size-card mb-5 m-2">
+                            <div className="card-header">
+                                <TituloLista titulo={lista.titulo} listaId={lista.id}></TituloLista>
+                            </div>
 
 
-                </div>
+                            <div className="card-body-background card-body">
 
-                {/* boton para agregar cards  */}
-                <div className="card-footer">
-                    <Agregador type="card" listaId={lista.id} ></Agregador>
-                </div>
+                                <Droppable droppableId={lista.id}>
+                                    {
+                                        (provided) => (
 
-            </div>
+                                            <div ref={provided.innerRef} {...provided.droppableProps} >
+
+                                                {
+                                                    lista.cards.map((card, index) => {
+                                                        return <Card card={card} key={card.id} index={index} ></Card>
+                                                    })
+                                                }
+                                                {provided.placeholder}
+
+                                            </div>
+
+                                        )
+                                    }
 
 
-        </div>
+                                </Droppable>
+
+
+
+
+                            </div>
+
+
+                            <div className="card-footer">
+                                <Agregador type="card" listaId={lista.id} ></Agregador>
+                            </div>
+                        </div>
+                    </div>
+                )
+            }
+
+        </Draggable>
+
     )
+
 }
 
+
 export default List
+
+
+
+
+    // < div className = "card-body-background card-body" >
+    // {
+    //     lista.cards.map(card => {
+    //         return <Card card={card} key={card.id} ></Card>
+    //     })
+    // }
+    //                         </ >

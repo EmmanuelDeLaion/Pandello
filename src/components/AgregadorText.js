@@ -5,10 +5,7 @@ const AgregadorText = ({ type, setAbrir, listaId }) => {
 
     const { agregarCard, agregarColumna } = useContext(contextAPI);
     const [titulo, setTitulo] = useState("");
-
-
-    console.log(titulo);
-
+ 
 
     const agregarCardOLista = () => {
         if (type === "card") {
@@ -33,7 +30,7 @@ const AgregadorText = ({ type, setAbrir, listaId }) => {
                 </div>
 
                 <div className="d-flex justify-content-center">
-                    
+
                     {/* boton agregar tarea o columna  */}
                     <button 
                         onClick={titulo === "" ? "" : agregarCardOLista}
