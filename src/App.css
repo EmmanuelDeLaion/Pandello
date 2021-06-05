@@ -1,21 +1,43 @@
-.card-body-background{
-    background-color: #F8F8F8;
+.App {
+    overflow-x: auto;
+    width: 100%;
+    min-height: 100vh;
+}
+.card-body-background {
+    background-color: #f8f8f8;
 }
 
-.size-card{
+.size-card {
     max-width: 300px;
     min-height: 500px;
 }
-.boton{
+.boton {
     border-radius: 50px;
     font-size: 12px;
 }
- 
-.card-tarea{
+
+.cerrar,
+.agregar-elemento,
+.agregar {
+    color: #fff;
+}
+
+.cerrar {
+    background-color: crimson;
+}
+
+.agregar-elemento {
+    background-color: #2f80ed;
+}
+
+.agregar {
+    background-color: #6fcf97;
+}
+
+.card-tarea {
     border-radius: 10px;
     background-color: #fff;
     margin-top: 5px;
     padding: 5px;
-    box-shadow: -1px 7px 10px -1px rgba(0,0,0,0.28);
-
+    box-shadow: -1px 7px 10px -1px rgba(0, 0, 0, 0.28);
 }

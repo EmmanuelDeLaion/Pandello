@@ -6,9 +6,9 @@ import Agregador from './Agregador';
 
 const List = () => {
     return (
-        <div className="root">
+        <div>
 
-            <div className="card size-card">
+            <div className="card size-card mb-5 m-2">
 
                 {/* Titulo de la culumna  */}
                 <div className="card-header">
