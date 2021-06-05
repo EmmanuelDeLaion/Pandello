@@ -1,5 +1,4 @@
 import React from 'react'
-import { Paper, CssBaseline } from "@material-ui/core";
 import TituloLista from './TituloLista';
 import Card from './Card';
 import Agregador from './Agregador';
@@ -11,16 +10,19 @@ const List = () => {
 
             <div className="card size-card">
 
+                {/* Titulo de la culumna  */}
                 <div className="card-header">
                     <TituloLista></TituloLista>
                 </div>
 
+                {/* cuerpo de la card  */}
                 <div className="card-body-background card-body">
                     <Card></Card>
                     <Card></Card>
                     <Card></Card>
                 </div>
 
+                {/* boton para agregar cards  */}
                 <div className="card-footer">
                     <Agregador></Agregador>
                 </div>
