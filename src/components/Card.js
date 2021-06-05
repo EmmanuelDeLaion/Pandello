@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Card = () => {
+const Card = ({ card }) => {
     return (
         <div>
             <div className="card-tarea">
-                <p>Tarea dfsdfdhsfhs fhs js fsdf j</p>
+                {card.titulo}
             </div>
         </div>
     )
