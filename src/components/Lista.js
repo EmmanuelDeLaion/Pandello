@@ -24,7 +24,7 @@ const List = () => {
 
                 {/* boton para agregar cards  */}
                 <div className="card-footer">
-                    <Agregador></Agregador>
+                    <Agregador type="card" ></Agregador>
                 </div>
 
             </div>

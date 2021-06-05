@@ -1,16 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 import AgregadorText from './AgregadorText';
 
-const Agregador = () => {
+const Agregador = ({ type }) => {
+
+
+    const [abrir, setAbrir] = useState(false);
+
     return (
         <div>
-            <div className="d-flex justify-content-center">
-                <button className="btn btn-primary boton" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"><i class="fas fa-plus"></i> Añadir Nuevo elemento</button>
+
+            <div className={!abrir ? "d-flex justify-content-center" : "hidden"} >
+                <button onClick={() => setAbrir(true)} className="btn btn-primary boton"><i class="fas fa-plus"></i>
+                    {
+                        type === "card" ? "Agregar nuevo elemento" : "Agregar nueva columna"
+                    }
+                </button>
             </div>
 
-            <div class="collapse mt-2" id="collapseExample">
-                <AgregadorText></AgregadorText>
+            <div className={abrir ? "mt-2" : "hidden"} >
+                <AgregadorText type={type} setAbrir={setAbrir}></AgregadorText>
             </div>
+
+
         </div>
     )
 }

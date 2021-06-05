@@ -5,6 +5,7 @@ import { tareas } from './data/tareas.json';
 import Navbar from './components/Navbar';
 import List from './components/Lista';
 import AgregadorText from './components/AgregadorText';
+import Agregador from './components/Agregador';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <List></List>
           <List></List>
           <List></List>
-          <AgregadorText></AgregadorText>
+          <Agregador type="list" ></Agregador>
         </div>
 
       </div>
