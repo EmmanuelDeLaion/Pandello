@@ -32,7 +32,7 @@ const List = ({ lista }) => {
 
                 {/* boton para agregar cards  */}
                 <div className="card-footer">
-                    <Agregador type="card" ></Agregador>
+                    <Agregador type="card" listaId={lista.id} ></Agregador>
                 </div>
 
             </div>
