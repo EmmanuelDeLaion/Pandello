@@ -35,9 +35,17 @@
 }
 
 .card-tarea {
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #fff;
     margin-top: 5px;
     padding: 5px;
     box-shadow: -1px 7px 10px -1px rgba(0, 0, 0, 0.28);
+}
+
+textarea::placeholder{
+    font-size: 12px;
+}
+
+.hidden{
+    display: none;
 }
