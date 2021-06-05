@@ -3,17 +3,22 @@
     width: 100%;
     min-height: 100vh;
 }
+.container-columnas {
+    overflow-x: auto;
+}
+
 .card-body-background {
     background-color: #f8f8f8;
 }
 
 .size-card {
-    max-width: 300px;
+    width: 300px;
     min-height: 500px;
 }
 .boton {
     border-radius: 50px;
     font-size: 12px;
+    width: 200px;
 }
 
 .cerrar,
