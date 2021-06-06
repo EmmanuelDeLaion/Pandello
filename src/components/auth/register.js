@@ -17,7 +17,7 @@ class Register extends React.Component {
                                 <input className="form-control form-control-sm mt-5" type="text" placeholder="Confirmar Contraseña"></input>
 
                                 <div className="d d-flex justify-content-center mt-2">
-                                    <Link to="/login" className="btn agregar w-100 mt-5">Registrarse</Link>
+                                    <Link to="/login" className="btn agregar w-100 mt-5">Registrarme</Link>
                                 </div>
                                 <br></br>
                                 <div className="d d-flex justify-content-center">
