@@ -1,4 +1,5 @@
-import {createContext} from 'react';
+import React from 'react';
 
+const MyContextAPI = React.createContext(null);
 
-export default createContext(null);
+export default MyContextAPI;

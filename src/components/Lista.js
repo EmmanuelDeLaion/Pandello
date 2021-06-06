@@ -62,12 +62,3 @@ const List = ({ lista, index }) => {
 export default List
 
 
-
-
-    // < div className = "card-body-background card-body" >
-    // {
-    //     lista.cards.map(card => {
-    //         return <Card card={card} key={card.id} ></Card>
-    //     })
-    // }
-    //                         </ >

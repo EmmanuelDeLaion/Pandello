@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Redirect} from 'react-router-dom';
 import login from './components/auth/login';
 import Register from './components/auth/register';
 import App from './App';
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar';
 
 
 function PandelloApp() {

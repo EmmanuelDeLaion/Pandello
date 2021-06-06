@@ -1,16 +1,15 @@
 import './App.css';
 import React, { useState } from 'react';
 import datosListas from './data/tareas.js';
-import Navbar from './components/Navbar';
 import List from './components/Lista';
 import Agregador from './components/Agregador';
-import ContextAPI from './ContextAPI';
 import uuid from "react-uuid";
 import { useLocalStorage } from './data/localStorage';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import Swal from 'sweetalert2';
+import MyContextAPI from './ContextApi';
 
-
+ 
 
 function App() {
   const [data, setData] = useLocalStorage('datos', datosListas);
@@ -87,7 +86,7 @@ function App() {
 
   return (
 
-    <ContextAPI.Provider value={{ actualizarTituloLista, agregarCard, agregarColumna }}>
+    <MyContextAPI.Provider value={{ actualizarTituloLista, agregarCard, agregarColumna }}>
       <div className="App">
 
         <DragDropContext onDragEnd={onDragEnd}>
@@ -119,7 +118,7 @@ function App() {
 
       </div>
 
-    </ContextAPI.Provider>
+    </MyContextAPI.Provider>
 
 
   );
