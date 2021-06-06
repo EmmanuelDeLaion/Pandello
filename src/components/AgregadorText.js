@@ -1,9 +1,9 @@
 import React, { useState, useContext } from 'react'
-import contextAPI from '../ContextAPI';
+import MyContextAPI from '../ContextApi';
 
 const AgregadorText = ({ type, setAbrir, listaId }) => {
 
-    const { agregarCard, agregarColumna } = useContext(contextAPI);
+    const { agregarCard, agregarColumna } = useContext(MyContextAPI);
     const [titulo, setTitulo] = useState("");
  
 

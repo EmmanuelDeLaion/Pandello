@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react'
-import contextAPI from '../ContextAPI';
+import MyContextAPI from '../ContextApi';
 
 const TituloLista = ({ titulo, listaId }) => {
 
     const [tituloNuevo, setTituloNuevo] = useState(titulo);
-    const { actualizarTituloLista } = useContext(contextAPI);
+    const { actualizarTituloLista } = useContext(MyContextAPI);
 
 
     const handleBlur = () => {
