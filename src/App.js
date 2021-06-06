@@ -31,7 +31,6 @@ function App() {
     });
   }
 
-
   const agregarCard = (titulo, listaId) => {
     const nuevaCardId = uuid();
     const nuevaCard = {
@@ -52,10 +51,8 @@ function App() {
     })
   }
 
-
   const agregarColumna = (titulo) => {
     const nuevaColumnaId = uuid();
-
     setData({
       listaIds: [
         ...data.listaIds,
@@ -73,15 +70,9 @@ function App() {
   }
 
   const onDragEnd = (result) => {
-
     const {
       destination,
-      source, source: { droppableId: sourceDroppableId, index: sourceIndex },
-      draggabledId,
-      type
     } = result;
-
-
 
     if (!destination) {
       return Swal.fire({
@@ -90,6 +81,7 @@ function App() {
         text: 'La tarea no se puede mover',
       });
     }
+
   }
 
 
@@ -97,10 +89,9 @@ function App() {
 
     <ContextAPI.Provider value={{ actualizarTituloLista, agregarCard, agregarColumna }}>
       <div className="App">
-        <Navbar titulo="Pandello" />
 
         <DragDropContext onDragEnd={onDragEnd}>
-          <Droppable droppableId="1" type="lista" direction="horizontal">
+          <Droppable droppableId="1" type="list" direction="horizontal">
             {
               (provided) => (
                 <div className="container-fluid mt-2" ref={provided.innerRef} {...provided.droppableProps}>
