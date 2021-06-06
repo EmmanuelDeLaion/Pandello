@@ -26,3 +26,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### React
 ### React uuid
 ### Bootstrap
+### SweetAlert2
