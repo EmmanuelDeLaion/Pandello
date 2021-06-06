@@ -4,16 +4,14 @@ import Card from './Card';
 import Agregador from './Agregador';
 import { Draggable, Droppable } from 'react-beautiful-dnd';
 
-
 const List = ({ lista, index }) => {
-
-
     return (
         <Draggable draggableId={lista.id} index={index}>
             {
                 (provided) => (
                     <div {...provided.draggableProps} ref={provided.innerRef}>
-                        <div className="card size-card mb-5 m-2">
+
+                        <div className="card size-card mb-5 m-2" {...provided.dragHandleProps}>
                             <div className="card-header">
                                 <TituloLista titulo={lista.titulo} listaId={lista.id}></TituloLista>
                             </div>
@@ -41,8 +39,6 @@ const List = ({ lista, index }) => {
 
 
                                 </Droppable>
-
-
 
 
                             </div>

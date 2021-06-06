@@ -12,8 +12,7 @@ class Navbar extends Component {
                         <a className="navbar-brand fw-bold">
                             {this.props.titulo}
                         </a>
-                        <button className="ml-auto btn btn-danger"><i class="fas fa-trash"></i></button>
-                    </div>
+                     </div>
                 </nav>
 
             </div>
